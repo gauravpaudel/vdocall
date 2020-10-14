@@ -3,6 +3,7 @@ const cameraOptions = document.querySelector('.video-options>select');
 const video = document.querySelector('video');
 const canvas = document.querySelector('canvas');
 const buttons = [...controls.querySelectorAll('button')];
+
 let streamStarted = false;
 
 const [play, pause] = buttons;
@@ -38,7 +39,7 @@ play.onclick = () => {
     pause.classList.remove('d-none');
     return;
   }
-  
+
   if ('mediaDevices' in navigator && navigator.mediaDevices.getUserMedia) {
     const updatedConstraints = {
       ...constraints,
